@@ -1,4 +1,4 @@
-apiVersion: v2
+apiVersion: v1
 type: application
 description: A Helm chart that hosts OrchardCore with PostgreSql
 name: orchard-cms
