@@ -49,7 +49,11 @@ Get the environment variables for postgres db connection
 */}}
 {{- define "orchard-cms.postgresEnv" -}}
 - name: PGHOST
-  value: {{ .Release.Name -}}-postgresql
+{{ if .Values.postgresql.service.host }}
+  value: {{ .Values.postgresql.service.host }}
+{{ else }}
+  value: {{ .Release.Name }}-postgresql
+{{- end -}}
 - name: PGPORT
   value: !!string {{ .Values.postgresql.service.port }}
 - name: PGDATABASE
