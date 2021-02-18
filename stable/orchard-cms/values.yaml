@@ -6,8 +6,8 @@ global:
 replicaCount: 1
 
 postgresql:
-  image:
-    tag: 11.9.0-debian-10-r48
+  service:
+    port: 5432
 
 image:
   repository: orchard-cms

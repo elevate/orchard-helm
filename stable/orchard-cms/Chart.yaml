@@ -10,7 +10,3 @@ sources:
 maintainers:
 - name: jptissot
   email: jean-philippe.tissot@canada.ca
-dependencies:
-  - name: postgresql
-    version: 9.8.4
-    repository: https://charts.bitnami.com/bitnami
