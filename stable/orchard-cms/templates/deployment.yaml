@@ -35,7 +35,6 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
-{{ include "orchard-cms.postgresEnv" . | indent 12 }}
 {{- toYaml .Values.image.environmentVariables | nindent 12 }}
           ports:
             - name: http
