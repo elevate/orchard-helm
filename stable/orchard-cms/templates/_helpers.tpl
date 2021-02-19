@@ -61,14 +61,15 @@ Get the environment variables for postgres db connection
 - name: PGUSER
   value: {{ .Values.global.postgresql.postgresqlUsername }}
 - name: PGPASSWORD
+{{ if .Values.global.postgresql.postgresqlPassword }}
+  value: {{ .Values.global.postgresql.postgresqlPassword }}
+{{ else }}
   valueFrom:
     secretKeyRef:
       name: {{ include "orchard-cms.postgresSecret" . }}
       key: postgresql-password
+{{- end }}
 {{- end -}}
-
-
-
 
 {{/*
 Return the proper Docker Image Registry Secret Names
